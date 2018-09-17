@@ -22,14 +22,14 @@ express.use(BodyParser.urlencoded
 express.get("/fetch", (request, response) =>
 {
 
-    response.send("HelloJS - Fetch\n" + request.params + "\n");
+    response.send("HelloJSApp - Fetch\n" + "\n");
     
 });
 
 express.post("/upload", (request, response) =>
 {
 
-    response.send("HelloJS - Upload\n" + JSON.stringify(request.body) + "\n");
+    response.send("HelloJSApp - Upload\n" + JSON.stringify(request.body) + "\n");
     
 });
 
