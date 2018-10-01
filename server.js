@@ -33,7 +33,7 @@ express.post("/upload", (request, response) =>
     
 });
 
-var port = process.env.port || process.env.PORT || 6002;
+var port = process.env.port || process.env.PORT || 6001;
 server.listen(port);
 
 console.log("Server running at http://localhost:%d", port);
