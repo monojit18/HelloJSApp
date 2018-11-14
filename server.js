@@ -3,6 +3,7 @@
 const Http = require("http");
 const Express = require("./node_modules/express");
 const BodyParser = require("./node_modules/body-parser");
+const MongoClient = require("./node_modules/mongodb").MongoClient;
 
 let express = Express();
 let server = Http.createServer(express);
@@ -22,7 +23,32 @@ express.use(BodyParser.urlencoded
 express.get("/fetch", (request, response) =>
 {
 
-    response.send("HelloJSApp - Fetch1.80\n" + "\n");
+    const url = "mongodb://workshopmongodb:dpGUILF7fRrUINfauDjw5Swh287GUOXWtoiypFHLlCYaOoPeBqQeTi7kgKOMsISESMyp4GDiw8TtFNT26kvqwA%3D%3D@workshopmongodb.documents.azure.com:10255/?ssl=true";
+    const dbName = "WorkshopDB";
+
+    MongoClient.connect(url, (err, client) =>
+                        {
+
+                            if (err !== null)                            
+                                return;
+
+                            const db = client.db(dbName);
+                            const collection = db.collection("WorkshopCollection");
+                            collection.find({}).toArray((err, docs) =>
+                            {
+
+                                if (err !== null)
+                                    return;
+
+                                console.log(docs);
+                                response.send("HelloJSApp - " + docs + "\n\n");
+                                
+                            });
+
+                        });
+
+
+    
     
 });
 

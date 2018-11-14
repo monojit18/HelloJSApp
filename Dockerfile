@@ -1,7 +1,7 @@
 FROM node:8
 
 # Create app directory
-WORKDIR /Users/monojitdattams/Projects/HelloJSApp
+WORKDIR /Users/monojitdattams/Projects/HelloJSApp/
 
 COPY package*.json /Users/monojitdattams/Projects/HelloJSApp/
 

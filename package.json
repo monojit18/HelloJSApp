@@ -8,7 +8,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "preinstall": "mkdir -p logs",
-        "install": "npm install --unsafe-perm --save-dev body-parser express",
+        "install": "npm install --unsafe-perm --save-dev mongodb body-parser express",
         "start": "node server.js 1> logs/server.log 2>&1"
     },
     "engines": {
@@ -16,6 +16,7 @@
     },
     "devDependencies": {
         "body-parser": "^1.18.3",
-        "express": "^4.16.3"
+        "express": "^4.16.4",
+        "mongodb": "^3.1.9"
     }
 }
