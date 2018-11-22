@@ -27,25 +27,25 @@ express.get("/fetch", (request, response) =>
     const dbName = "WorkshopDB";
 
     MongoClient.connect(url, (err, client) =>
-                        {
+    {
 
-                            if (err !== null)                            
-                                return;
+        if (err !== null)                            
+            return;
 
-                            const db = client.db(dbName);
-                            const collection = db.collection("WorkshopCollection");
-                            collection.find({}).toArray((err, docs) =>
-                            {
+        const db = client.db(dbName);
+        const collection = db.collection("WorkshopCollection");
+        collection.find({}).toArray((err, docs) =>
+        {
 
-                                if (err !== null)
-                                    return;
+            if (err !== null)
+                return;
 
-                                console.log(docs);
-                                response.send("HelloJSApp - " + docs + "\n\n");
-                                
-                            });
+            console.log(docs);
+            response.send("HelloJSApp - " + docs + "\n\n");
+            
+        });
 
-                        });
+    });
 
 
     
