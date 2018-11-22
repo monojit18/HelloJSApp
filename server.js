@@ -32,7 +32,7 @@ express.get("/fetch", (request, response) =>
         if (err !== null)                            
             return;
 
-        const db = client.db(dbName);
+        const db = client.db(dbName);// added coment
         const collection = db.collection("WorkshopCollection");
         collection.find({}).toArray((err, docs) =>
         {
