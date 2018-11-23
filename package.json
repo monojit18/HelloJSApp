@@ -1,7 +1,7 @@
 {
     "name": "hello_js_app",
     "description": "Simple Hello World Node.js sample for Azure App Service",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "private": true,
     "license": "MIT",
     "author": "Monojit Datta",
