@@ -23,7 +23,7 @@ express.use(BodyParser.urlencoded
 express.get("/", (request, response) =>
 {
 
-    const message = "hello world"
+    const message = "hello covid free world"
     response.send("HelloJSApp - " + message + "\n\n");
 
 });
