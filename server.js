@@ -20,6 +20,14 @@ express.use(BodyParser.urlencoded
 
 }));
 
+express.get("/", (request, response) =>
+{
+
+    const message = "hello world"
+    response.send("HelloJSApp - " + message + "\n\n");
+
+});
+
 express.get("/fetch", (request, response) =>
 {
 
@@ -46,10 +54,6 @@ express.get("/fetch", (request, response) =>
         });
 
     });
-
-
-    
-    
 });
 
 express.post("/upload", (request, response) =>
